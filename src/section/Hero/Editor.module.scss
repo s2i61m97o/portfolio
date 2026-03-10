@@ -1,0 +1,64 @@
+@use "../../styles/tokens" as *;
+@use "../../styles/typography" as t;
+@use "../../styles/breakpoints" as mq;
+
+.window {
+  background-color: $color-neutral-900;
+  border-radius: 10px;
+  box-shadow: 1px 5px 5px rgb(from #{$color-neutral-500} r g b / 0.5);
+  display: none;
+  margin: auto;
+  max-width: 450px;
+  @include t.body;
+  @include mq.sm {
+    display: block;
+  }
+}
+
+.topBar {
+  align-items: center;
+  background-color: $color-neutral-900;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  display: flex;
+
+  height: $space-8;
+  justify-content: center;
+  width: 100%;
+
+  p {
+    color: $color-neutral-50;
+  }
+}
+
+.fileTabs {
+  backdrop-filter: blur(10px);
+  background-color: $color-neutral-800;
+  border-top: $color-neutral-900 1px solid;
+  display: flex;
+  width: 100%;
+}
+
+.tab {
+  color: $color-neutral-50;
+  background-color: $color-neutral-900;
+  border-right: $color-primary-500 1px inset;
+  border-top: $color-primary-500 1px inset;
+  padding: $space-2;
+}
+
+.editor {
+  padding: $space-8 $space-8 $space-12;
+  text-align: left;
+  @include t.code;
+}
+
+.pre {
+  // Sugar High CSS variable overrides
+  --sh-keyword: #c586c0;
+  --sh-string: #ce9178;
+  --sh-sign: #{$color-neutral-300};
+  --sh-property: #d16969;
+  --sh-class: #4ec9b0;
+  --sh-entity: #4ec9b0;
+}

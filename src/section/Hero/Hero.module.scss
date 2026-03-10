@@ -5,25 +5,42 @@
 .container {
   background-color: $color-neutral-50;
   display: grid;
-  gap: $space-6;
   height: 100svh;
   place-content: center;
-  text-align: center;
   width: 100vw;
 }
 
-.heading {
+.grid__container {
+  display: grid;
+  place-content: center;
+  gap: $space-10;
+  text-align: center;
+
+  @include mq.lg {
+    grid-template-columns: auto auto;
+    align-items: center;
+    text-align: left;
+    max-width: 95vw;
+    margin-inline: auto;
+  }
+}
+
+.content__container {
+  margin-inline: $space-4;
+}
+
+.content__heading {
   margin: 0;
   @include t.header;
 }
 
-.subheading {
-  margin: 0;
+.content__subheading {
+  margin: $space-1 0;
   @include t.subheader;
 }
 
-.body {
-  padding-inline: $space-4;
+.content__body {
+  margin-block: $space-2 $space-4;
   @include t.body;
 }
 
@@ -31,4 +48,8 @@
   display: flex;
   justify-content: center;
   gap: $space-4;
+
+  @include mq.lg {
+    justify-content: flex-start;
+  }
 }
