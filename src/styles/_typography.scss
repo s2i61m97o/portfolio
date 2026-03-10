@@ -1,1 +1,28 @@
 @use "./tokens" as *;
+
+@mixin header {
+  color: $color-neutral-900;
+  font-family: $font-heading;
+  font-size: clamp($text-5xl, 5vw, $text-6xl);
+  font-weight: $font-bold;
+}
+
+@mixin subheader {
+  color: $color-neutral-900;
+  font-family: $font-primary;
+  font-size: clamp($text-lg, 5vw, $text-xl);
+  font-weight: $font-bold;
+}
+
+@mixin body {
+  color: $color-neutral-900;
+  font-family: $font-primary;
+  font-size: clamp($text-sm, 3vw, $text-base);
+  font-weight: $font-medium;
+}
+
+@mixin button {
+  font-family: $font-primary;
+  font-size: $text-base;
+  font-weight: $font-medium;
+}

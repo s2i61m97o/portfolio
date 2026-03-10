@@ -1,0 +1,36 @@
+@use "../../styles/tokens" as *;
+@use "../../styles/breakpoints" as mq;
+@use "../../styles/typography" as t;
+
+.btn {
+  border-radius: $radius-lg;
+  padding: $space-3 $space-8;
+  text-decoration: none;
+  @include t.button;
+}
+
+.primary {
+  background-color: $color-primary-500;
+  border: 2px solid $color-neutral-50;
+  color: $color-neutral-50;
+
+  &:hover {
+    background-color: $color-neutral-50;
+    border-color: $color-primary-500;
+    color: $color-primary-500;
+    cursor: pointer;
+  }
+}
+
+.secondary {
+  background-color: $color-neutral-50;
+  border: 2px solid $color-primary-500;
+  color: $color-primary-500;
+
+  &:hover {
+    background-color: $color-primary-500;
+    border: 2px solid $color-neutral-50;
+    color: $color-neutral-50;
+    cursor: pointer;
+  }
+}

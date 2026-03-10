@@ -1,0 +1,34 @@
+@use "../../styles/tokens" as *;
+@use "../../styles/breakpoints" as mq;
+@use "../../styles/typography" as t;
+
+.container {
+  background-color: $color-neutral-50;
+  display: grid;
+  gap: $space-6;
+  height: 100svh;
+  place-content: center;
+  text-align: center;
+  width: 100vw;
+}
+
+.heading {
+  margin: 0;
+  @include t.header;
+}
+
+.subheading {
+  margin: 0;
+  @include t.subheader;
+}
+
+.body {
+  padding-inline: $space-4;
+  @include t.body;
+}
+
+.btn__container {
+  display: flex;
+  justify-content: center;
+  gap: $space-4;
+}
