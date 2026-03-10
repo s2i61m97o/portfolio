@@ -14,14 +14,21 @@
 @mixin subheader {
   color: $color-neutral-900;
   font-family: $font-primary;
-  font-size: clamp($text-lg, 0.8609rem + 1.1268vw, $text-3xl);
+  font-size: clamp($text-xl, 0.8979rem + 1.5023vw, $text-4xl);
   font-weight: $font-medium;
+}
+
+@mixin heading {
+  color: $color-neutral-900;
+  font-family: $font-primary;
+  font-size: clamp($text-xl, 0.8979rem + 1.5023vw, $text-4xl);
+  font-weight: $font-bold;
 }
 
 @mixin body {
   color: $color-neutral-900;
   font-family: $font-primary;
-  font-size: clamp($text-sm, 3vw, $text-base);
+  font-size: clamp($text-sm, 0.743rem + 0.5634vw, $text-xl);
   font-weight: $font-light;
 }
 

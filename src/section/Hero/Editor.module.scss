@@ -42,13 +42,13 @@
 .tab {
   color: $color-neutral-50;
   background-color: $color-neutral-900;
-  border-right: $color-primary-500 1px inset;
-  border-top: $color-primary-500 1px inset;
+  border-right: $blue-500 1px inset;
+  border-top: $blue-500 1px inset;
   padding: $space-2;
 }
 
 .editor {
-  padding: $space-8 $space-8 $space-12;
+  padding: $space-8;
   text-align: left;
   @include t.code;
 }

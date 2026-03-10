@@ -1,0 +1,56 @@
+@use "../../styles/tokens" as *;
+@use "../../styles/breakpoints" as mq;
+@use "../../styles/typography" as t;
+
+.container {
+  background-color: #eff6ff;
+  display: grid;
+  gap: $space-10;
+  justify-items: center;
+  min-height: 100vh;
+  place-content: center;
+  width: 100%;
+  position: sticky;
+  z-index: 2;
+  top: 0;
+
+  @include mq.lg {
+    grid-template-columns: 40vw auto;
+    align-items: center;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    position: relative;
+  }
+}
+
+.img__container {
+  position: relative;
+  width: 50%;
+  aspect-ratio: 1/1;
+
+  @include mq.lg {
+    width: 100%;
+  }
+}
+
+.content {
+  margin-inline: $space-4;
+  text-align: center;
+
+  @include mq.lg {
+    text-align: left;
+  }
+}
+
+.content__title {
+  @include t.heading;
+}
+
+.content__body {
+  margin-block: $space-4;
+  max-width: 400px;
+  @include t.body;
+  @include mq.lg {
+    max-width: 600px;
+  }
+}

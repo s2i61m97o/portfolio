@@ -10,8 +10,8 @@ const Hero = () => {
           <h1 className={styles.content__heading}>Matt Simpson</h1>
           <h2 className={styles.content__subheading}>Frontend Developer</h2>
           <p className={styles.content__body}>
-            Crafting interactive and responsive websites with Next.js,
-            TypeScript and SASS.
+            Crafting interactive and responsive websites with
+            <br /> Next.js, TypeScript and SASS.
           </p>
           <div className={styles.btn__container}>
             <Button link="#projects" variant="primary">
