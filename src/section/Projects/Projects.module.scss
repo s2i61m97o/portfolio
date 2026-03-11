@@ -3,19 +3,108 @@
 @use "../../styles/typography" as t;
 
 .container {
-  background-color: $color-neutral-100;
+  background-color: $color-neutral-50;
   display: grid;
   min-height: 100vh;
   top: 0;
   position: sticky;
-  width: 100vw;
+  overflow: hidden;
+  max-width: 100vw;
   z-index: 2;
+  @include mq.lg {
+    background-color: white;
+    max-height: 100vh;
+    grid-template-areas:
+      "feat feat sec"
+      "feat feat sec"
+      "a b sec";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: $space-2;
+  }
 }
 
 .card {
   text-align: center;
   padding-block-end: $space-10;
   border-block-end: solid $color-neutral-500 1px;
+  position: relative;
+  @include mq.lg {
+    padding: 0;
+    border: none;
+    &:hover,
+    &:focus-visible,
+    &:focus-within {
+      .card__info {
+        transform: translate(0);
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.cardFeatured {
+  grid-row: 1/2;
+  @include mq.lg {
+    grid-area: feat;
+    overflow: hidden;
+
+    .card__info {
+      display: flex;
+
+      padding: $space-10;
+      inset-block: 0;
+      right: 0;
+      width: 30%;
+      transform: translate(100%);
+    }
+  }
+}
+
+.cardSecondary {
+  @include mq.lg {
+    grid-area: sec;
+    .card__info {
+      display: flex;
+
+      padding: $space-10;
+      inset-inline: 0;
+      bottom: 0;
+      transform: translate(0, 100%);
+    }
+  }
+}
+
+.cardStandard {
+  @include mq.lg {
+    .card__info {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: repeat(3, auto);
+      padding: $space-10;
+      inset: 0;
+      justify-items: start;
+      transform: translate(0, 100%);
+    }
+
+    .card__title {
+      grid-area: 1/1/2/2;
+    }
+
+    .card__description {
+      grid-area: 2/1/3/2;
+    }
+
+    .card__icons {
+      grid-area: 1/2/4/4;
+      grid-row: span 3;
+      flex-direction: column;
+    }
+
+    .card__links {
+      grid-area: 3/1/4/2;
+    }
+  }
 }
 
 .card__img {
@@ -23,6 +112,11 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+  @include mq.lg {
+    aspect-ratio: unset;
+    position: absolute;
+    height: 100%;
+  }
 
   img {
     object-fit: cover;
@@ -32,16 +126,54 @@
 
 .card__info {
   padding-inline: $space-4;
+  @include mq.md {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: min-content auto auto;
+    gap: $space-4;
+  }
+  @include mq.lg {
+    background-color: rgb(from #{$color-neutral-900} r g b / 0.5);
+    backdrop-filter: blur(5px);
+    color: $color-neutral-100;
+    position: absolute;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    grid-template-columns: unset;
+    transition: all 350ms ease-in;
+    visibility: hidden;
+  }
 }
 
 .card__title {
   margin: $space-3;
   @include t.subheader;
+  font-weight: $font-bold;
+  @include mq.md {
+    margin-block-end: 0;
+  }
+  @include mq.lg {
+    font-size: $text-xl;
+    text-align: start;
+    margin: 0;
+    text-shadow: 1px 1px 1px black;
+    color: inherit;
+  }
 }
 
 .card__description {
   margin: 0;
   @include t.body;
+  @include mq.md {
+    grid-area: 2/1/3/2;
+  }
+  @include mq.lg {
+    font-size: $text-sm;
+    text-align: start;
+    color: inherit;
+    text-shadow: 1px 1px 1px black;
+  }
 }
 
 .card__links {
@@ -49,15 +181,39 @@
   gap: $space-3;
   justify-content: center;
   margin-block: $space-6;
+  @include mq.md {
+    flex-direction: column;
+    grid-row: span 3;
+  }
+  @include mq.lg {
+    flex-direction: row;
+  }
 }
 
 .card__icons {
   display: flex;
   justify-content: center;
   gap: $space-10;
+  @include mq.lg {
+    fill: $color-neutral-100;
+  }
 }
 
 .card__icon {
-  width: 40px;
   aspect-ratio: 1/1;
+  width: 30px;
+}
+
+.card__btn {
+  display: none;
+  background-color: $blue-500;
+  border: 2px solid $color-neutral-100;
+  color: $color-neutral-100;
+  border-radius: 8px;
+  padding-inline: $space-4;
+  &:hover {
+    background-color: $color-neutral-100;
+    border-color: $blue-500;
+    color: $blue-500;
+  }
 }

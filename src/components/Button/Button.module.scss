@@ -11,7 +11,7 @@
 
 .primary {
   background-color: $blue-500;
-  border: 2px solid $color-neutral-50;
+  border: 1px solid $color-neutral-50;
   color: $color-neutral-50;
 
   &:hover {
@@ -24,13 +24,24 @@
 
 .secondary {
   background-color: $color-neutral-50;
-  border: 2px solid $blue-500;
+  border: 1px solid $blue-500;
   color: $blue-500;
 
   &:hover {
     background-color: $blue-500;
-    border: 2px solid $color-neutral-50;
+    border: 1px solid $color-neutral-50;
     color: $color-neutral-50;
     cursor: pointer;
+  }
+}
+
+.github {
+  background-color: black;
+  border: 2px solid black;
+  box-shadow: 0 0 1px 0 $color-neutral-50;
+  color: $color-neutral-50;
+  &:hover {
+    background-color: $color-neutral-50;
+    color: black;
   }
 }
