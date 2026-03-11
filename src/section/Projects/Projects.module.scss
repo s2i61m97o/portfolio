@@ -1,0 +1,63 @@
+@use "../../styles/tokens" as *;
+@use "../../styles/breakpoints" as mq;
+@use "../../styles/typography" as t;
+
+.container {
+  background-color: $color-neutral-100;
+  display: grid;
+  min-height: 100vh;
+  top: 0;
+  position: sticky;
+  width: 100vw;
+  z-index: 2;
+}
+
+.card {
+  text-align: center;
+  padding-block-end: $space-10;
+  border-block-end: solid $color-neutral-500 1px;
+}
+
+.card__img {
+  aspect-ratio: 3/2;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.card__info {
+  padding-inline: $space-4;
+}
+
+.card__title {
+  margin: $space-3;
+  @include t.subheader;
+}
+
+.card__description {
+  margin: 0;
+  @include t.body;
+}
+
+.card__links {
+  display: flex;
+  gap: $space-3;
+  justify-content: center;
+  margin-block: $space-6;
+}
+
+.card__icons {
+  display: flex;
+  justify-content: center;
+  gap: $space-10;
+}
+
+.card__icon {
+  width: 40px;
+  aspect-ratio: 1/1;
+}
