@@ -9,14 +9,14 @@
   justify-items: center;
   min-height: 100vh;
   place-content: center;
-  width: 100%;
   position: sticky;
-  z-index: 2;
   top: 0;
+  width: 100%;
+  z-index: 2;
 
   @include mq.lg {
-    grid-template-columns: 40vw auto;
     align-items: center;
+    grid-template-columns: 40vw auto;
   }
   @media (prefers-reduced-motion: reduce) {
     position: relative;
@@ -24,9 +24,9 @@
 }
 
 .img__container {
+  aspect-ratio: 1/1;
   position: relative;
   width: 50%;
-  aspect-ratio: 1/1;
 
   @include mq.lg {
     width: 100%;
@@ -34,12 +34,9 @@
 }
 
 .content {
-  margin-inline: $space-4;
-  text-align: center;
-
-  @include mq.lg {
-    text-align: left;
-  }
+  margin-inline: $space-10;
+  text-align: left;
+  text-wrap: balance;
 }
 
 .content__title {
