@@ -6,6 +6,7 @@
   border-radius: $radius-lg;
   padding: $space-3 $space-8;
   text-decoration: none;
+  text-wrap: nowrap;
   @include t.button;
 }
 

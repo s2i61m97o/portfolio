@@ -55,7 +55,7 @@
       padding: $space-10;
       inset-block: 0;
       right: 0;
-      width: 30%;
+      width: min-content;
       transform: translate(100%);
     }
   }
@@ -80,8 +80,10 @@
     .card__info {
       display: grid;
       grid-template-columns: auto auto;
-      grid-template-rows: repeat(3, auto);
-      padding: $space-10;
+      grid-template-rows: max-content max-content auto;
+      // padding: clamp($space-4, $space-10;
+      padding: clamp($space-6, -0.9615rem + 3.8462vw, $space-10)
+        clamp($space-4, -2.6923rem + 5.7692vw, $space-10);
       inset: 0;
       justify-items: start;
       transform: translate(0, 100%);
@@ -96,13 +98,16 @@
     }
 
     .card__icons {
-      grid-area: 1/2/4/4;
+      grid-area: 1/2/4/3;
       grid-row: span 3;
       flex-direction: column;
+      height: 100%;
     }
 
     .card__links {
       grid-area: 3/1/4/2;
+      margin: 0;
+      align-self: end;
     }
   }
 }
@@ -196,6 +201,9 @@
   gap: $space-10;
   @include mq.lg {
     fill: $color-neutral-100;
+    gap: 0;
+    width: 100%;
+    justify-content: space-evenly;
   }
 }
 
