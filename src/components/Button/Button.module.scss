@@ -3,11 +3,14 @@
 @use "../../styles/typography" as t;
 
 .btn {
+  align-items: center;
   border-radius: $radius-lg;
+  display: flex;
   padding: $space-3 $space-8;
   text-decoration: none;
   text-wrap: nowrap;
   @include t.button;
+  font-weight: 700;
 }
 
 .primary {

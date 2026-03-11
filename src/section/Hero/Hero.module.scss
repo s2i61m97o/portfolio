@@ -55,3 +55,12 @@
     justify-content: flex-start;
   }
 }
+
+.link {
+  padding: $space-1;
+}
+
+.link__icon {
+  aspect-ratio: 1/1;
+  width: 30px;
+}

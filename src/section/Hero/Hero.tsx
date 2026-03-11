@@ -1,6 +1,7 @@
 import Button from "@/components/Button";
 import styles from "./Hero.module.scss";
 import Editor from "./Editor";
+import {Github} from "@/assets/icons/icons";
 
 const Hero = () => {
   return (
@@ -19,6 +20,15 @@ const Hero = () => {
             </Button>
             <Button link="#contact" variant="secondary">
               Contact
+            </Button>
+            <Button
+              link="https://github.com/s2i61m97o/"
+              variant="github"
+              external
+              aria-label="github profile"
+              className={styles.link}
+            >
+              <Github className={styles.link__icon} />
             </Button>
           </div>
         </div>
