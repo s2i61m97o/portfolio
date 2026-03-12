@@ -116,7 +116,7 @@ export default function Contact() {
           aria-label="github profile"
           className={styles.link}
         >
-          Github
+          view github profile
         </Button>
         <Button
           link="https://www.frontendmentor.io/profile/s2i61m97o/"
@@ -125,7 +125,7 @@ export default function Contact() {
           aria-label="frontend mentors profile"
           className={styles.link}
         >
-          Frontend Mentors
+          view frontend mentors profile
         </Button>
       </div>
     </section>

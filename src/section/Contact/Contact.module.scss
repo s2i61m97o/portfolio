@@ -8,12 +8,11 @@
   display: grid;
   height: 100vh;
   padding-inline: clamp($space-4, -2.8168rem + 16.285vw, $space-20);
-  @include mq.sm {
-  }
+
   @include mq.lg {
-    display: grid;
+    column-gap: $space-4;
+    gap: $space-4;
     grid-template-rows: repeat(6, auto);
-    grid-template-columns: repeat(2, 1fr);
     position: sticky;
     top: 0;
     z-index: 4;
@@ -46,7 +45,7 @@
   }
 
   @include mq.lg {
-    display: grid;
+    display: contents;
   }
 }
 
@@ -65,11 +64,16 @@
 
   @include mq.lg {
     flex-grow: 1;
+    max-height: fit-content;
   }
 }
 
 .contact__inputMessage {
   min-height: 10rem;
+  @include mq.lg {
+    grid-area: 3/2/8/3;
+    min-height: 100%;
+  }
 }
 
 .contact__button {
@@ -86,12 +90,13 @@
     color: $blue-500;
   }
   @include t.button;
+  font-weight: $font-extrabold;
   @include mq.md {
     flex-basis: 100%;
   }
   @include mq.lg {
     align-self: end;
-    grid-area: 3 / 1 / 4 / 2;
+    grid-area: 5 / 1 / 6 / 2;
   }
 }
 
@@ -122,15 +127,20 @@
   flex-wrap: wrap;
   gap: $space-4;
   margin-block: $space-10;
+  @include mq.lg {
+    display: contents;
+    max-width: calc(50% - $space-4);
+  }
 }
 
 .link {
   flex-grow: 1;
+  text-transform: capitalize;
 }
 
 .error {
   border-color: $color-error;
   &::placeholder {
-    color: red;
+    color: $color-error;
   }
 }
