@@ -4,7 +4,7 @@
 
 html {
   scroll-behavior: smooth;
-
+  width: 100vw;
   @media (prefers-reduced-motion: reduce) {
     scroll-behavior: auto;
   }
@@ -12,4 +12,5 @@ html {
 
 body {
   margin: 0;
+  width: 100vw;
 }
