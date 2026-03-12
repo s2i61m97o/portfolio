@@ -9,17 +9,17 @@
   justify-items: center;
   min-height: 100vh;
   place-content: center;
-  // position: sticky;
-  top: 0;
   width: 100%;
-  z-index: 2;
 
   @include mq.lg {
     align-items: center;
     grid-template-columns: 40vw auto;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    @media (prefers-reduced-motion: reduce) {
+      position: relative;
+    }
   }
 }
 

@@ -7,10 +7,12 @@
   display: grid;
   height: 100svh;
   place-content: center;
-  // width: 100
-  // position: sticky;
-  // z-index: 1;
-  // top: 0;
+
+  @include mq.lg {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
 }
 
 .grid__container {

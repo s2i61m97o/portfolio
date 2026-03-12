@@ -4,12 +4,11 @@
 
 .container {
   background-color: $blue-100;
-  //   display: grid;
-
   height: 100vh;
   place-content: center;
-  width: 100vw;
-  position: sticky;
-  z-index: 4;
-  top: 0;
+  @include mq.lg {
+    position: sticky;
+    top: 0;
+    z-index: 4;
+  }
 }
