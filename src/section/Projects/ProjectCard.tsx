@@ -31,20 +31,20 @@ const ProjectCard = ({
         src={images.src.m}
         fill
         alt={images.alt}
-        className={styles.cardImg_m}
+        className={clsx(styles.cardImg, styles.cardImg_m)}
         sizes="100vw"
       />
       <Image
         src={images.src.t}
         fill
         alt={images.alt}
-        className={styles.cardImg_t}
+        className={clsx(styles.cardImg, styles.cardImg_t)}
       />
       <Image
         src={images.src.d}
         fill
         alt={images.alt}
-        className={styles.cardImg_d}
+        className={clsx(styles.cardImg, styles.cardImg_d)}
       />
       <div className={styles.card__info}>
         <h4 className={styles.card__title}>{title}</h4>
