@@ -1,0 +1,15 @@
+@use "../../styles/tokens" as *;
+@use "../../styles/breakpoints" as mq;
+@use "../../styles/typography" as t;
+
+.container {
+  background-color: $blue-100;
+  //   display: grid;
+
+  height: 100vh;
+  place-content: center;
+  width: 100vw;
+  position: sticky;
+  z-index: 4;
+  top: 0;
+}

@@ -1,12 +1,9 @@
-"use client";
-
 import Image from "next/image";
 import styles from "./Projects.module.scss";
 import {Icons} from "@/assets/icons/icons";
 import Button from "@/components/Button";
 import clsx from "clsx";
 import type {ProjectData} from "./types";
-import {useState} from "react";
 
 const ProjectCard = ({
   title,
@@ -17,8 +14,6 @@ const ProjectCard = ({
   tech,
   gridSlot,
 }: ProjectData) => {
-  const [moreInfo, setMoreInfo] = useState<boolean>(false);
-
   const techEls = tech.map((t) => {
     const Icon = Icons[t as keyof typeof Icons];
     if (!Icon) return null;
@@ -32,9 +27,25 @@ const ProjectCard = ({
   };
   return (
     <div className={clsx(styles.card, slotClass[gridSlot])} tabIndex={0}>
-      <div className={styles.card__img}>
-        <Image src={images.src} fill alt={images.alt} sizes="100vw" />
-      </div>
+      <Image
+        src={images.src.m}
+        fill
+        alt={images.alt}
+        className={styles.cardImg_m}
+        sizes="100vw"
+      />
+      <Image
+        src={images.src.t}
+        fill
+        alt={images.alt}
+        className={styles.cardImg_t}
+      />
+      <Image
+        src={images.src.d}
+        fill
+        alt={images.alt}
+        className={styles.cardImg_d}
+      />
       <div className={styles.card__info}>
         <h4 className={styles.card__title}>{title}</h4>
         <p className={styles.card__description}>{description}</p>

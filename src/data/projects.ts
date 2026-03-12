@@ -1,7 +1,4 @@
-import space_tourism from "@/assets/projects/space-tourism.webp";
-import photosnap from "@/assets/projects/photosnap.webp";
-import assembly from "@/assets/projects/assembly.webp";
-import weather__app from "@/assets/projects/weather-app.webp";
+import {spacetourism, photosnap, weather, assembly} from "@/assets/projects";
 import {ProjectData} from "@/section/Projects/types";
 
 export const projects = [
@@ -12,7 +9,7 @@ export const projects = [
     url: "https://spacetourism-mattsimpson.netlify.app/",
     repo: "https://github.com/s2i61m97o/fm-space-tourism",
     images: {
-      src: space_tourism,
+      src: spacetourism,
       alt: "screen shot of space tourism project",
     },
     tech: ["react", "typescript", "nextjs", "sass"],
@@ -38,7 +35,7 @@ export const projects = [
     url: "https://weather-app-s2i61m97o.netlify.app/",
     repo: "https://github.com/s2i61m97o/fm-weather-app",
     images: {
-      src: weather__app,
+      src: weather,
       alt: "screen shot of weather app project",
     },
     tech: ["react", "typescript", "sass", "api"],

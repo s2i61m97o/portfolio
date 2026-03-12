@@ -4,16 +4,9 @@
 
 .container {
   background-color: $color-neutral-50;
-  display: grid;
-  min-height: 100vh;
-  top: 0;
-  position: sticky;
-  overflow: hidden;
-  max-width: 100vw;
-  z-index: 2;
+  height: 400svh;
+
   @include mq.lg {
-    background-color: white;
-    max-height: 100vh;
     grid-template-areas:
       "feat feat sec"
       "feat feat sec"
@@ -25,9 +18,9 @@
 }
 
 .card {
+  height: 100svh;
+  width: 100vw;
   text-align: center;
-  padding-block-end: $space-10;
-  border-block-end: solid $color-neutral-500 1px;
   position: relative;
   @include mq.lg {
     padding: 0;
@@ -47,7 +40,6 @@
   grid-row: 1/2;
   @include mq.lg {
     grid-area: feat;
-    overflow: hidden;
 
     .card__info {
       display: flex;
@@ -66,7 +58,6 @@
     grid-area: sec;
     .card__info {
       display: flex;
-
       padding: $space-10;
       inset-inline: 0;
       bottom: 0;
@@ -81,7 +72,6 @@
       display: grid;
       grid-template-columns: auto auto;
       grid-template-rows: max-content max-content auto;
-      // padding: clamp($space-4, $space-10;
       padding: clamp($space-6, -0.9615rem + 3.8462vw, $space-10)
         clamp($space-4, -2.6923rem + 5.7692vw, $space-10);
       inset: 0;
@@ -112,73 +102,71 @@
   }
 }
 
-.card__img {
-  aspect-ratio: 3/2;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  @include mq.lg {
-    aspect-ratio: unset;
-    position: absolute;
-    height: 100%;
+.cardImg_m {
+  object-fit: cover;
+  object-position: top;
+  @include mq.sm {
+    display: none;
   }
+}
 
-  img {
-    object-fit: cover;
-    object-position: top;
+.cardImg_t {
+  display: none;
+  @include mq.sm {
+    display: block;
+  }
+  @include mq.lg {
+    display: none;
+  }
+}
+
+.cardImg_d {
+  display: none;
+  @include mq.lg {
+    display: block;
   }
 }
 
 .card__info {
-  padding-inline: $space-4;
-  @include mq.md {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: min-content auto auto;
-    gap: $space-4;
-  }
-  @include mq.lg {
-    background-color: rgb(from #{$color-neutral-900} r g b / 0.5);
-    backdrop-filter: blur(5px);
-    color: $color-neutral-100;
-    position: absolute;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    grid-template-columns: unset;
-    transition: all 350ms ease-in;
-    visibility: hidden;
-  }
+  background-color: rgb(from #{$color-neutral-900} r g b / 0.5);
+  backdrop-filter: blur(5px);
+  border-block: 1px solid $color-neutral-600;
+  bottom: 5%;
+  color: $color-neutral-100;
+  display: grid;
+  grid-template-columns: auto max-content;
+  grid-template-columns: repeat(3, auto);
+  left: 0;
+  right: 0;
+  padding: $space-6;
+  place-items: start;
+  position: absolute;
+  transition: all 350ms ease-in;
+  animation: openinfo linear both;
+  animation-timeline: view();
+  animation-range: entry 10% exit 95%;
 }
 
 .card__title {
   margin: $space-3;
   @include t.subheader;
   font-weight: $font-bold;
-  @include mq.md {
-    margin-block-end: 0;
-  }
-  @include mq.lg {
-    font-size: $text-xl;
-    text-align: start;
-    margin: 0;
-    text-shadow: 1px 1px 1px black;
-    color: inherit;
-  }
+  font-size: $text-xl;
+  text-align: start;
+  margin: 0;
+  text-shadow: 1px 1px 1px black;
+  color: inherit;
+  grid-area: 1/1/2/2;
 }
 
 .card__description {
   margin: 0;
+  text-shadow: 1px 1px 1px black;
+  font-size: $text-sm;
+  text-align: start;
   @include t.body;
-  @include mq.md {
-    grid-area: 2/1/3/2;
-  }
-  @include mq.lg {
-    font-size: $text-sm;
-    text-align: start;
-    color: inherit;
-    text-shadow: 1px 1px 1px black;
-  }
+  color: inherit;
+  grid-area: 2/1/3/2;
 }
 
 .card__links {
@@ -186,8 +174,8 @@
   gap: $space-3;
   justify-content: center;
   margin-block: $space-6;
+  grid-area: 3/1/4/2;
   @include mq.md {
-    flex-direction: column;
     grid-row: span 3;
   }
   @include mq.lg {
@@ -197,14 +185,11 @@
 
 .card__icons {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: $space-10;
-  @include mq.lg {
-    fill: $color-neutral-100;
-    gap: 0;
-    width: 100%;
-    justify-content: space-evenly;
-  }
+  fill: $color-neutral-100;
+  gap: $space-4;
+  grid-area: 1/2/4/3;
 }
 
 .card__icon {
@@ -223,5 +208,27 @@
     background-color: $color-neutral-100;
     border-color: $blue-500;
     color: $blue-500;
+  }
+}
+
+@keyframes openinfo {
+  0% {
+    transform: translate(-100%);
+    visibility: hidden;
+  }
+
+  20% {
+    transform: translate(0);
+    visibility: visible;
+  }
+
+  60% {
+    transform: translate(0);
+    visibility: visible;
+  }
+
+  100% {
+    transform: translate(-100%);
+    visibility: hidden;
   }
 }

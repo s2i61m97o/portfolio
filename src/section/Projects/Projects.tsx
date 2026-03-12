@@ -18,11 +18,7 @@ const Projects = () => {
     );
   });
 
-  return (
-    <section id="projects" className={styles.container}>
-      {cardElements}
-    </section>
-  );
+  return <section className={styles.container}>{cardElements}</section>;
 };
 
 export default Projects;

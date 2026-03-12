@@ -6,7 +6,11 @@ export interface ProjectData {
   url: string;
   repo: string;
   images: {
-    src: StaticImageData | string;
+    src: {
+      m: StaticImageData | string;
+      t: StaticImageData | string;
+      d: StaticImageData | string;
+    };
     alt: string;
   };
   tech: string[];
