@@ -14,7 +14,37 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: "Matt Simpson | Frontend Developer",
-  description: "",
+  description:
+    "Self-taught Frontend Developer crafting polished and responsive websites with Nextjs, TypeScript and SASS",
+  openGraph: {
+    title: "Matt Simpson | Frontend Developer",
+    description:
+      "Self-taught Frontend Developer crafting polished and responsive websites with Next.js, TypeScript and SASS.",
+    url: "https://mattsimpsondev.netlify.app",
+    siteName: "Matt Simpson",
+    locale: "en_GB",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Matt Simpson - Frontend Developer",
+      },
+    ],
+  },
+  authors: [{name: "Matt Simpson"}],
+  creator: "Matt Simpson",
+  keywords: [
+    "Frontend Developer",
+    "Next.js",
+    "TypeScript",
+    "SASS",
+    "React",
+    "Web Developer",
+    "UK",
+  ],
+  metadataBase: new URL("https://mattsimpsondev.netlify.app"),
 };
 
 export default function RootLayout({
