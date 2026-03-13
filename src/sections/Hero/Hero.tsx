@@ -15,11 +15,11 @@ const Hero = () => {
             <br /> Next.js, TypeScript and SASS.
           </p>
           <div className={styles.btn__container}>
-            <Button link="#projects" variant="primary">
-              Projects
-            </Button>
             <Button link="#contact" variant="secondary">
               Contact
+            </Button>
+            <Button link="#projects" variant="primary">
+              Projects
             </Button>
             <Button
               link="https://github.com/s2i61m97o/"

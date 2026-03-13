@@ -52,10 +52,11 @@
 .btn__container {
   display: flex;
   justify-content: center;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
   gap: $space-4;
-
   @include mq.lg {
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
 }
 

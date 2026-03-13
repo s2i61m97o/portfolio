@@ -1,8 +1,8 @@
 import styles from "./page.module.scss";
-import Hero from "@/section/Hero";
-import About from "@/section/About";
-import Projects from "@/section/Projects";
-import Contact from "@/section/Contact/Contact";
+import Hero from "@/sections/Hero";
+import About from "@/sections/About";
+import Projects from "@/sections/Projects";
+import Contact from "@/sections/Contact";
 
 export default function Home() {
   return (
