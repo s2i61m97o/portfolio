@@ -150,6 +150,9 @@
   animation: openinfo linear both;
   animation-timeline: view();
   animation-range: entry 10% exit 95%;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 
   @include mq.sm {
     display: flex;
@@ -167,6 +170,9 @@
     visibility: hidden;
     width: unset;
     right: 0;
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
   }
 }
 
