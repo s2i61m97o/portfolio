@@ -59,6 +59,7 @@
   margin-block-start: $space-2;
   padding: $space-2;
   width: 100%;
+  transition: all 1s linear;
   @include t.body;
 
   &:focus {
@@ -163,6 +164,7 @@
 
 .error {
   border-color: $color-error;
+
   &::placeholder {
     color: $color-error;
   }

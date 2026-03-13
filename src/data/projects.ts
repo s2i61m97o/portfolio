@@ -1,5 +1,5 @@
 import {spacetourism, photosnap, weather, assembly} from "@/assets/projects";
-import {ProjectData} from "@/section/Projects/types";
+import {ProjectData} from "@/sections/Projects/types";
 
 export const projects = [
   {
