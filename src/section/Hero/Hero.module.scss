@@ -5,7 +5,8 @@
 .container {
   background-color: $color-neutral-50;
   display: grid;
-  height: 100svh;
+  min-height: 100svh;
+  padding-block: $space-20;
   place-content: center;
 
   @include mq.lg {

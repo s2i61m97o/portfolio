@@ -4,7 +4,7 @@
 
 .container {
   background-color: $color-neutral-50;
-  height: 400svh;
+  min-height: 400svh;
   @include mq.lg {
     display: grid;
     grid-template-areas:
@@ -15,6 +15,7 @@
     grid-template-rows: 1fr 1fr 1fr;
     gap: $space-2;
     height: 100vh;
+    min-height: unset;
     position: sticky;
     top: 0;
     z-index: 3;
@@ -22,11 +23,12 @@
 }
 
 .card {
-  height: 100svh;
+  min-height: 100svh;
   text-align: center;
   position: relative;
   @include mq.lg {
-    height: unset;
+    min-height: unset;
+    height: 100%;
     width: 100%;
     &:hover,
     &:focus-visible,

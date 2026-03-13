@@ -3,12 +3,13 @@
 @use "../../styles/typography" as t;
 
 .container {
-  background-color: #eff6ff;
+  background-color: $color-neutral-100;
   display: grid;
   gap: $space-10;
   justify-items: center;
   min-height: 100vh;
   place-content: center;
+  padding-block: $space-20;
   width: 100%;
 
   @include mq.lg {
@@ -29,7 +30,7 @@
   width: 50%;
 
   @include mq.lg {
-    width: 100%;
+    width: 75%;
   }
 }
 
@@ -41,6 +42,7 @@
 
 .content__title {
   @include t.heading;
+  font-family: $font-heading;
 }
 
 .content__body {

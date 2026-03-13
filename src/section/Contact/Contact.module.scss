@@ -4,10 +4,11 @@
 
 .container {
   align-content: center;
-  background-color: $color-neutral-50;
+  background-color: $color-neutral-100;
   display: grid;
-  height: 100vh;
+  min-height: 100vh;
   padding-inline: clamp($space-4, -2.8168rem + 16.285vw, $space-20);
+  padding-block: $space-20;
 
   @include mq.lg {
     column-gap: $space-4;
@@ -21,6 +22,8 @@
 
 .contact__heading {
   @include t.subheader;
+  font-family: $font-heading;
+
   @include mq.lg {
     grid-area: 1/1/2/3;
   }
@@ -100,22 +103,42 @@
   }
 }
 
-.contact__popup {
-  border-radius: 10px;
-  bottom: 5rem;
-  left: 50%;
+.toast {
+  background-color: $blue-100;
+  border-inline-start: 5px solid $blue-500;
+  border-radius: 3px;
+  inset-block-start: 5rem;
+  justify-self: center;
   opacity: 0;
-  padding: $space-2;
-  position: fixed;
+  padding: $space-4 $space-6;
+  position: absolute;
   pointer-events: none;
-  text-align: center;
-  transform: translate(-50%);
-  @include t.body;
+  text-align: left;
+  @include t.button;
+  font-weight: $font-light;
   transition: all 250ms ease-in-out;
+
+  &::after {
+    content: "";
+    background-color: $blue-500;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    height: 2px;
+    transform-origin: left center;
+    transform: scale(1);
+    width: 100%;
+    animation: shrink 5s linear forwards;
+    animation-play-state: paused;
+  }
 }
 
-.contact__popupShow {
+.toast.toast_Show {
   opacity: 1;
+
+  &::after {
+    animation-play-state: running;
+  }
 }
 
 .contact__honeypot {
@@ -142,5 +165,14 @@
   border-color: $color-error;
   &::placeholder {
     color: $color-error;
+  }
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
   }
 }

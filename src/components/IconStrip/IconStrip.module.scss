@@ -1,0 +1,13 @@
+@use "../../styles/tokens" as *;
+@use "../../styles/breakpoints" as mq;
+@use "../../styles/typography" as t;
+
+.container {
+  display: flex;
+  gap: $space-4;
+}
+
+.icon {
+  aspect-ratio: 1/1;
+  width: 40px;
+}

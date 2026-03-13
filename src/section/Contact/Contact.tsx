@@ -46,7 +46,7 @@ export default function Contact() {
     if (state.succeeded) {
       const timer = setTimeout(() => {
         reset();
-      }, 4000);
+      }, 4900);
       return () => clearTimeout(timer);
     }
   }, [state.succeeded, reset]);
@@ -128,6 +128,13 @@ export default function Contact() {
           view frontend mentors profile
         </Button>
       </div>
+
+      <span
+        className={clsx(styles.toast, state.succeeded && styles.toast_Show)}
+      >
+        thanks for your message
+        <br />I will get back to you soon
+      </span>
     </section>
   );
 }

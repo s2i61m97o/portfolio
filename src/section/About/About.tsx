@@ -1,18 +1,12 @@
 import Image from "next/image";
 import profile from "@/assets/animated-character-profile.png";
 import styles from "./About.module.scss";
+import IconStrip from "@/components/IconStrip/IconStrip";
 const About = () => {
   return (
     <section className={styles.container}>
       <div className={styles.img__container}>
-        <Image
-          src={profile}
-          // height={1024}
-          // width={1024}
-          fill
-          alt=""
-          className={styles.img}
-        />
+        <Image src={profile} fill alt="" className={styles.img} />
       </div>
       <div className={styles.content}>
         <h3 className={styles.content__title}>about me</h3>
@@ -30,6 +24,9 @@ const About = () => {
           open to frontend roles where design precision and performance are part
           of the culture.
         </p>
+        <div>
+          <IconStrip />
+        </div>
       </div>
     </section>
   );
