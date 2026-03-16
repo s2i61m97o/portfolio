@@ -9,6 +9,7 @@
   min-height: 100vh;
   padding-inline: clamp($space-4, -2.8168rem + 16.285vw, $space-20);
   padding-block: $space-20;
+  position: relative;
 
   @include mq.lg {
     gap: $space-4;
