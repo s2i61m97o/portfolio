@@ -68,32 +68,35 @@ export default function Contact() {
         ref={form}
       >
         <input
+          aria-label="name"
           className={clsx(styles.contact__input, error.name && styles.error)}
+          disabled={state.submitting}
           name="name"
+          onChange={() => handleChange("name")}
           placeholder={error.name ? "please enter your name" : "name"}
           type="text"
-          disabled={state.submitting}
-          onChange={() => handleChange("name")}
         />
         <input
+          aria-label="email"
           className={clsx(styles.contact__input, error.email && styles.error)}
+          disabled={state.submitting}
           name="email"
+          onChange={() => handleChange("email")}
           placeholder={error.email ? "please enter a valid email" : "email"}
           type="email"
-          disabled={state.submitting}
-          onChange={() => handleChange("email")}
         />
 
         <textarea
+          aria-label="message"
           className={clsx(
             styles.contact__input,
             styles.contact__inputMessage,
             error.message && styles.error,
           )}
-          name="message"
-          placeholder={error.message ? "please enter a message" : "message"}
           disabled={state.submitting}
+          name="message"
           onChange={() => handleChange("message")}
+          placeholder={error.message ? "please enter a message" : "message"}
         />
 
         <input

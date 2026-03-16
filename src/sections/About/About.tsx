@@ -9,7 +9,7 @@ const About = () => {
         <Image src={profile} fill alt="" className={styles.img} />
       </div>
       <div className={styles.content}>
-        <h3 className={styles.content__title}>about me</h3>
+        <h2 className={styles.content__title}>about me</h2>
         <p className={styles.content__body}>
           I am a self-taught Frontend Developer, creating polished and
           responsive websites with clean code and performance in mind. Taking
