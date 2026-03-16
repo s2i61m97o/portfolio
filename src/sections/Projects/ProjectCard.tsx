@@ -59,7 +59,12 @@ const ProjectCard = ({
             <span>Github</span>
           </Button>
         </div>
-        <div className={styles.card__icons}>{techEls}</div>
+        <div
+          className={styles.card__icons}
+          aria-label={`built using ${tech.join(", ")}`}
+        >
+          {techEls}
+        </div>
       </div>
     </article>
   );

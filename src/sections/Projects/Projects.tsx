@@ -20,6 +20,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className={styles.container}>
+      <h2 className="visually-hidden">projects</h2>
       {cardElements}
     </section>
   );
