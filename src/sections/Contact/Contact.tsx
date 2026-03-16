@@ -23,6 +23,8 @@ export default function Contact() {
     message: false,
   });
 
+  console.log(reset);
+
   function validateAndSubmit(e: React.SubmitEvent) {
     e.preventDefault();
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;

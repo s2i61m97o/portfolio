@@ -51,11 +51,11 @@ const ProjectCard = ({
         <p className={styles.card__description}>{description}</p>
         <div className={styles.card__links}>
           <Button link={url} variant="primary" external>
-            <span className="visually hidden">{title} - </span>
+            <span className="visually-hidden">{title} - </span>
             <span>Live Site</span>
           </Button>
           <Button link={repo} variant="github" external>
-            <span className="visually hidden">{title} - </span>
+            <span className="visually-hidden">{title} - </span>
             <span>Github</span>
           </Button>
         </div>
