@@ -5,6 +5,17 @@
 .container {
   background-color: $color-neutral-50;
   @include mq.lg {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+  }
+}
+
+.project__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  @include mq.lg {
     display: grid;
     grid-template-areas:
       "feat feat sec"
@@ -13,22 +24,13 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr 1fr;
     gap: $space-2;
-    height: 100vh;
-    min-height: unset;
-    position: sticky;
-    top: 0;
-    z-index: 3;
+    height: 100svh;
   }
 }
 
 .card {
-  min-height: 100svh;
   text-align: center;
-  position: relative;
   @include mq.lg {
-    min-height: unset;
-    height: 100%;
-    width: 100%;
     &:hover,
     &:focus-visible,
     &:focus-within {
@@ -37,6 +39,16 @@
         visibility: visible;
       }
     }
+  }
+}
+
+.card__container {
+  min-height: 100svh;
+  position: relative;
+  @include mq.lg {
+    min-height: unset;
+    height: 100%;
+    width: 100%;
   }
 }
 

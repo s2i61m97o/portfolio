@@ -26,47 +26,50 @@ const ProjectCard = ({
     standard: styles.cardStandard,
   };
   return (
-    <article className={clsx(styles.card, slotClass[gridSlot])}>
-      <Image
-        src={images.src.m}
-        fill
-        alt={images.alt}
-        className={clsx(styles.cardImg, styles.cardImg_m)}
-        sizes="100vw"
-      />
-      <Image
-        src={images.src.t}
-        fill
-        alt={images.alt}
-        className={clsx(styles.cardImg, styles.cardImg_t)}
-      />
-      <Image
-        src={images.src.d}
-        fill
-        alt={images.alt}
-        className={clsx(styles.cardImg, styles.cardImg_d)}
-      />
-      <div className={styles.card__info}>
-        <h4 className={styles.card__title}>{title}</h4>
-        <p className={styles.card__description}>{description}</p>
-        <div className={styles.card__links}>
-          <Button link={url} variant="primary" external>
-            <span className="visually-hidden">{title} - </span>
-            <span>Live Site</span>
-          </Button>
-          <Button link={repo} variant="github" external>
-            <span className="visually-hidden">{title} - </span>
-            <span>Github</span>
-          </Button>
+    <li className={clsx(styles.card, slotClass[gridSlot])}>
+      <article className={styles.card__container}>
+        <Image
+          src={images.src.m}
+          fill
+          alt={images.alt}
+          className={clsx(styles.cardImg, styles.cardImg_m)}
+          sizes="100vw"
+        />
+        <Image
+          src={images.src.t}
+          fill
+          alt={images.alt}
+          className={clsx(styles.cardImg, styles.cardImg_t)}
+        />
+        <Image
+          src={images.src.d}
+          fill
+          alt={images.alt}
+          className={clsx(styles.cardImg, styles.cardImg_d)}
+        />
+        <div className={styles.card__info}>
+          <h4 className={styles.card__title}>{title}</h4>
+          <p className={styles.card__description}>{description}</p>
+          <div className={styles.card__links}>
+            <Button link={url} variant="primary" external>
+              <span className="visually-hidden">{title} - </span>
+              <span>Live Site</span>
+            </Button>
+            <Button link={repo} variant="github" external>
+              <span className="visually-hidden">{title} - </span>
+              <span>Github</span>
+            </Button>
+          </div>
+          <div
+            className={styles.card__icons}
+            aria-label={`built using ${tech.join(", ")}`}
+            role="group"
+          >
+            {techEls}
+          </div>
         </div>
-        <div
-          className={styles.card__icons}
-          aria-label={`built using ${tech.join(", ")}`}
-        >
-          {techEls}
-        </div>
-      </div>
-    </article>
+      </article>
+    </li>
   );
 };
 
