@@ -120,6 +120,9 @@
   @include t.button;
   font-weight: $font-light;
   transition: all 250ms ease-in-out;
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
 
   &::after {
     content: "";
