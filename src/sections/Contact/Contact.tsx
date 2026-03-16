@@ -78,7 +78,7 @@ export default function Contact() {
           className={clsx(styles.contact__input, error.email && styles.error)}
           name="email"
           placeholder={error.email ? "please enter a valid email" : "email"}
-          type="text"
+          type="email"
           disabled={state.submitting}
           onChange={() => handleChange("email")}
         />
