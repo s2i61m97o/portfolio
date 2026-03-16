@@ -152,14 +152,14 @@
   color: $color-neutral-100;
   display: grid;
   grid-template-columns: repeat(3, auto);
-  left: 0;
-  right: 0;
   padding: $space-6;
   place-items: start;
   position: absolute;
-  animation: openinfo linear both;
-  animation-timeline: view();
-  animation-range: entry 10% exit 95%;
+  @supports (animation-timeline: view()) {
+    animation: openinfo linear both;
+    animation-timeline: view();
+    animation-range: entry 10% exit 95%;
+  }
   @media (prefers-reduced-motion: reduce) {
     animation: none;
   }
