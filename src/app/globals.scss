@@ -1,6 +1,7 @@
-@use "../styles/_tokens.scss";
-@use "../styles/_typography.scss";
+@use "../styles/tokens.scss";
+@use "../styles/typography.scss";
 @use "../styles/reset";
+@use "../styles/utilities.scss";
 
 html {
   scroll-behavior: smooth;

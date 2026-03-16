@@ -25,7 +25,7 @@ const Hero = () => {
               link="https://github.com/s2i61m97o/"
               variant="github"
               external
-              aria-label="github profile"
+              aria-label="github profile, opens in new tab"
               className={styles.link}
             >
               <Github className={styles.link__icon} />

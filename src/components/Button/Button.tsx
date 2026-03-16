@@ -9,7 +9,7 @@ const Button = ({
   external,
   className,
 }: {
-  children: string | JSX.Element;
+  children: string | JSX.Element[] | JSX.Element;
   link: string;
   variant: "primary" | "secondary" | "github";
   external?: boolean;
@@ -20,8 +20,10 @@ const Button = ({
       href={link}
       className={clsx(styles.btn, styles[variant], className)}
       target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
     >
       {children}
+      {external && <span className="visually-hidden">opens in new tab</span>}
     </a>
   );
 };
