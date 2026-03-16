@@ -15,7 +15,7 @@ interface Data {
 type DataKeys = keyof Data;
 
 export default function Contact() {
-  const form = useRef(null);
+  const form = useRef<HTMLFormElement>(null);
   const [state, handleSubmit, reset] = useForm("xeegyonw");
   const [error, setError] = useState({
     name: false,
@@ -46,6 +46,7 @@ export default function Contact() {
     if (state.succeeded) {
       const timer = setTimeout(() => {
         reset();
+        form.current?.reset();
       }, 4900);
       return () => clearTimeout(timer);
     }

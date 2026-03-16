@@ -2,7 +2,7 @@ import styles from "./Editor.module.scss";
 import clsx from "clsx";
 import {highlight} from "sugar-high";
 
-export default function codeEditor() {
+export default function Editor() {
   const code = `import { Developer } from "./Matt";
 import { Precision } from "./design";
 import { Performance } from "./code";
