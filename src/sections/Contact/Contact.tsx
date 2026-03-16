@@ -58,7 +58,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className={styles.container}>
-      <h3 className={styles.contact__heading}>get in touch</h3>
+      <h2 className={styles.contact__heading}>get in touch</h2>
       <p className={styles.contact__subheading}>
         to talk about projects, collaborations and opportunities
       </p>
@@ -132,6 +132,8 @@ export default function Contact() {
 
       <span
         className={clsx(styles.toast, state.succeeded && styles.toast_Show)}
+        role="status"
+        aria-live="polite"
       >
         thanks for your message
         <br />I will get back to you soon
