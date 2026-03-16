@@ -26,7 +26,7 @@ const ProjectCard = ({
     standard: styles.cardStandard,
   };
   return (
-    <div className={clsx(styles.card, slotClass[gridSlot])} tabIndex={0}>
+    <article className={clsx(styles.card, slotClass[gridSlot])}>
       <Image
         src={images.src.m}
         fill
@@ -59,7 +59,7 @@ const ProjectCard = ({
         </div>
         <div className={styles.card__icons}>{techEls}</div>
       </div>
-    </div>
+    </article>
   );
 };
 
