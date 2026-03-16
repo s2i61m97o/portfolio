@@ -7,8 +7,6 @@
   font-size: clamp($text-5xl, 2.4718rem + 2.2535vw, $text-7xl);
   font-weight: $font-bold;
   line-height: $leading-none;
-  @include mq.lg {
-  }
 }
 
 @mixin subheader {

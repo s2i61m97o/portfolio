@@ -4,7 +4,6 @@
 
 .container {
   background-color: $color-neutral-50;
-  min-height: 400svh;
   @include mq.lg {
     display: grid;
     grid-template-areas:
@@ -177,7 +176,6 @@
 }
 
 .card__title {
-  margin: $space-3;
   @include t.subheader;
   font-weight: $font-bold;
   font-size: $text-xl;
