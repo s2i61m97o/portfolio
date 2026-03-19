@@ -24,6 +24,7 @@ const ProjectCard = ({
     featured: styles.cardFeatured,
     secondary: styles.cardSecondary,
     standard: styles.cardStandard,
+    none: undefined,
   };
   return (
     <li className={clsx(styles.card, slotClass[gridSlot])}>
@@ -40,12 +41,18 @@ const ProjectCard = ({
           fill
           alt={images.alt}
           className={clsx(styles.cardImg, styles.cardImg_t)}
+          sizes="(max-width: 1024px) 100vw, 100vw"
         />
         <Image
           src={images.src.d}
           fill
           alt={images.alt}
           className={clsx(styles.cardImg, styles.cardImg_d)}
+          sizes={
+            gridSlot === "featured"
+              ? "(min-width: 1024px) 66vw, 100vw"
+              : "(min-width: 1024px) 33vw, 100vw"
+          }
         />
         <div className={styles.card__info}>
           <h4 className={styles.card__title}>{title}</h4>

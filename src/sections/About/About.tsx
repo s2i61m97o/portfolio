@@ -6,7 +6,13 @@ const About = () => {
   return (
     <section className={styles.container}>
       <div className={styles.img__container}>
-        <Image src={profile} fill alt="" className={styles.img} />
+        <Image
+          src={profile}
+          fill
+          alt=""
+          className={styles.img}
+          sizes="(min-width: 1024px) 30vw, 50vw"
+        />
       </div>
       <div className={styles.content}>
         <h2 className={styles.content__title}>about me</h2>
