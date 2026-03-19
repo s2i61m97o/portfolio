@@ -14,5 +14,5 @@ export interface ProjectData {
     alt: string;
   };
   tech: string[];
-  gridSlot: "featured" | "secondary" | "standard";
+  gridSlot: "featured" | "secondary" | "standard" | "none";
 }

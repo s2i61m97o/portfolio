@@ -1,4 +1,10 @@
-import {spacetourism, photosnap, weather, assembly} from "@/assets/projects";
+import {
+  spacetourism,
+  photosnap,
+  weather,
+  assembly,
+  tipCalculator,
+} from "@/assets/projects";
 import {ProjectData} from "@/sections/Projects/types";
 
 export const projects = [
@@ -52,6 +58,19 @@ export const projects = [
       alt: "screen shot of assembly endgame project",
     },
     tech: ["react", "css"],
+    gridSlot: "none",
+  },
+  {
+    title: "tip calculator app",
+    description:
+      "A fully functional tip calculator built with React, TypeScript, and SASS. Users enter a bill amount, select a tip percentage, and split the cost among a group. The app instantly calculates and displays the tip and total per person. Includes unit testing with Vitest.",
+    url: "https://tip-calculator-one-red.vercel.app/",
+    repo: "https://github.com/s2i61m97o/tip-calculator-app",
+    images: {
+      src: tipCalculator,
+      alt: "screen shot of tip calculator app",
+    },
+    tech: ["react", "typescript", "sass", "vitest"],
     gridSlot: "standard",
   },
 ] as ProjectData[];

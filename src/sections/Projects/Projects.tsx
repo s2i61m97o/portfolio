@@ -4,6 +4,9 @@ import {ProjectCard} from "./";
 
 const Projects = () => {
   const cardElements = projects.map((p) => {
+    if (p.gridSlot === "none") {
+      return;
+    }
     return (
       <ProjectCard
         key={p.title}
